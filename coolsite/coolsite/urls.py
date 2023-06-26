@@ -16,12 +16,13 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-from coolsite.coolsite import settings
+from coolsite import settings
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", include("womens.urls")),
 ]
 
 if settings.DEBUG:
